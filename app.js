@@ -165,34 +165,40 @@ let Student = function(name, age, hometown) {
   this.hometown = hometown;
 };
 
+// let Student = (name, age, hometown) => {
+//   this.name = name;
+//   this.age = age;
+//   this.hometown = hometown;
+// }
+
 let joe = new Student('Joe', 'Schmoe', 100);
 
 // TODO: Uncomment the following line of code to see the output in the browser console
 // Note that the arrow function will cause this code to break!
-// console.log(joe);
+console.log(joe);
 
 // TODO: After viewing the previous console.log(), return the code to a working state.
-
-
 
 Student.prototype.greeting = function() {
   return `Hi, my name is ${this.name}`;
 };
 
+// let Student = greeting => `Hi, my name is ${name}`;
+
 // TODO: Uncomment the following line of code to see the output in the browser console
 // Note that the arrow function will cause this method to break!
-// console.log(joe.greeting());
+console.log(joe.greeting());
 
 // TODO: After viewing the previous console.log(), return the code to a working state.
-
-
 
 Student.courseName = function() {
   return 'This student is enrolled in Code 301.';
 };
 
+// let Student = courseName => `This student is enrolled in Code 301.`;
+
 // TODO: Uncomment the following line of code to see the output in the browser console
-// console.log(Student.courseName());
+console.log(Student.courseName());
 
 
 
@@ -203,16 +209,17 @@ Student.prototype.scope = function() {
 };
 
 // TODO: Uncomment the following line of code to see the output in the browser console
-// joe.scope();
+joe.scope();
 
 Student.prototype.scopeArrow = () => console.log(this);
 
 // TODO: Uncomment the following line of code to see the output in the browser console
-// joe.scopeArrow();
+joe.scopeArrow();
 
 // TODO: Write a COMMENT below to answer the following questions.
 // 1. What is "this" when joe.scope() is invoked?
-//
+// "this" is set to the object. 
 // 2. What is "this" when joe.scopeArrow() is invoked?
-//
+// In an arrow function, the value of "this" is set to the window. It's a reference to the global scope to the window.
 // 3. Explain why "this" is different when an arrow function is used.
+// The value of "this" in an arrow function is set by the invocation context that the function is used in. 
